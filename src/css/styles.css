@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "Oblik";
+  src: url("/fonts/oblik.woff2") format("woff2"),
+    url("/fonts/oblik.woff") format("woff"),
+    /* Add other formats if available */
+    url("/fonts/oblik.ttf") format("truetype");
+  /* Add font-weight and font-style if applicable */
+}
+
+.fa {
+  font-weight: bold;
+}
+
+.dropdowncontent {
+  /* Adjust as needed based on your layout's margins/paddings */
+  box-sizing: border-box;
+  position: absolute;
+  /* transform: translateX(-100%); */
+
+}
+
+.base-image {
+  transition: opacity 0.3s ease-in-out;
+  /* Adjust transition duration and timing function as needed */
+}
+
+.overlay-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* Adjust transition duration and timing function as needed */
+}
+
+.products_content:hover .base-image {
+  opacity: 0;
+}
+
+.products_content:hover .overlay-image {
+  opacity: 1;
+  animation: animate__zoomOut 0.5s ease;
+}
+
+@keyframes animate__zoomOut {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+    /* Adjust the scale factor as needed */
+  }
+}
+
+.hidden1 {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+
+/* .dropdown-content.transition-transform {
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+} */
+
+.mattress-content {
+  top: 100%;
+  left: 30%;
+  /* background-color: red; */
+  transform: translateX(-30%);
+}
+
+.sales-content {
+  top: 100%;
+  left: 65%;
+  /* background-color: red; */
+  transform: translateX(-65%);
+}
+
+.accessories-content {
+  top: 100%;
+  left: 10%;
+  /* background-color: red; */
+  transform: translateX(-10%);
+  width: 30vw;
+}
+
+
+.dropdown:hover .dropdowncontent {
+  display: flex;
+  /* padding-top: 5%; */
+}
+
+.dropdown:hover .listitem::before {
+  display: block;
+}
+
+.dropdown:hover .listitem {
+  background-color: #08c;
+  color: white;
+}
+
+.listitem::before {
+  display: none;
+  z-index: 100;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid #08c;
+  z-index: 100;
+}
+
+.custom-animation {
+  animation-delay: 0.01s;
+  animation-duration: 0.5s;
+
+}
+
+.image-container {
+  max-width: 100%;
+  /* Set maximum width to prevent image from overflowing */
+  height: auto;
+  /* Allow height to adjust according to the image aspect ratio */
+}
+
+.image-container img {
+  width: 100%;
+  /* Make image fill its container horizontally */
+  height: auto;
+  /* Allow height to adjust according to the image aspect ratio */
+}
+
+
+@media (min-width: 768px) {
+  .carousel-container {
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.byb-badge {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00acbb;
+  color: #fff;
+  width: 88%;
+  text-align: center;
+  border-radius:30px;
+  padding-block: 10px;
+  margin-top: calc(-0.3* var(15px));
+  margin-bottom: 8px;
+  margin-inline: auto;
+  box-shadow: 0px 1px 9px 2px #0e0e0e38;
+  font-size: 14px;
+}
+
+.drawer {
+  transition: transform 0.2s ease-in-out !important;
+  /* Adjust duration and timing function as needed */
+}
+
+.banner-text-container {
+  top: 50%;
+  left: 12%;
+  transform: translateY(-50%)
+}
+
+.banner-heading {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.banner-sub-heading {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: -15px
+}
+
+.banner-button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for mobile and tablet screens */
+
+  .banner-text-container {
+    top: 40%;
+    /* Adjust positioning as needed for mobile/tablet */
+    left: 3%;
+    /* Adjust positioning as needed for mobile/tablet */
+  }
+
+  .banner-heading {
+    font-size: 18px;
+  }
+
+  .banner-sub-heading {
+    font-size: 13px;
+    /* Adjust font size for smaller screens */
+    margin-bottom: -5px;
+    /* Adjust margin as needed */
+  }
+
+  .banner-button {
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 8px 22px;
+
+  }
+}
+
+.banner-button:hover {
+  background-color: #1e391c;
+  color: #bb9369;
+}
+
+.offer-text {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trending-text {
+  position: relative;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 34px;
+  text-align: center;
+  color: #222222;
+}
+
+.trending-text-below {
+  color: #878787;
+  font-family: Libre Baskerville;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 23.8px;
+  text-align: center;
+}
+
+.trending-text-line {
+  width: 24px;
+  height: 1px;
+  gap: 0px;
+  opacity: 0.64px;
+}
+
+.trending-text::after {
+  content: "";
+  width: 24px;
+  height: 1px;
+  top: 2773px;
+  left: 728px;
+  gap: 0px;
+  opacity: 0.64px;
+
+}
+
+.trending-text::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  top: 2773px;
+  left: 728px;
+  gap: 0px;
+  opacity: 0.64px;
+}
+
+.underline-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  /* Adjust space between "Trending" text and underlines as needed */
+}
+
+.underline {
+  width: 24px;
+  height: 1px;
+  opacity: 0.64px;
+  background-color: #222222;
+  
+  /* Adjust color as needed */
+  margin: 0 8px;
+  /* Adjust space between underlines as needed */
+}

@@ -1,0 +1,33 @@
+.thing {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .thing::before,
+  .thing::after {
+    content: '';
+    z-index: 1;  
+    position: absolute;
+  }
+  
+  .thing::before {
+    border-top: 2px solid black;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;  
+  }
+  
+  .thing::after {
+    border-radius: 300%;
+    bottom: 20px;
+    top: 220px;
+    height: 300px;
+    border: 2px solid gray;
+    top: -234px;
+    background-color: white;
+  }
+  
+  html { margin: 5em; }
